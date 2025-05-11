@@ -23,11 +23,10 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-const RootLayout = ({ children }: Readonly<RootLayoutProps>) => {
-  return (
-    <html lang='en'>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
-    </html>
-  );
-};
+const RootLayout = ({ children }: Readonly<RootLayoutProps>) => (
+  <html lang='en'>
+    <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
+  </html>
+);
+
 export default RootLayout;
