@@ -11,7 +11,8 @@ export default eslint(
   {
     name: 'shift-intensive/rewrite',
     rules: {
-      'node/prefer-global/process': 'off'
+      'node/prefer-global/process': 'off',
+      'react/no-context-provider': 'off'
     }
   }
 );

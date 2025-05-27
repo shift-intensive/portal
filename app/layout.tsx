@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
 
 import { Geist, Geist_Mono } from 'next/font/google';
+import { cookies } from 'next/headers';
+
+import { DockPanel, Header } from './(components)';
+import { Provider } from './provider';
 
 import './globals.css';
 
@@ -23,10 +27,21 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-const RootLayout = ({ children }: Readonly<RootLayoutProps>) => (
-  <html lang='en'>
-    <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
-  </html>
-);
+const RootLayout = async ({ children }: Readonly<RootLayoutProps>) => {
+  const cookieStore = await cookies();
+  const theme = cookieStore.get('theme')?.value;
+
+  return (
+    <html className={theme} data-theme={theme}>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Provider>
+          <Header />
+          <div className='mt-40'>{children}</div>
+          <DockPanel />
+        </Provider>
+      </body>
+    </html>
+  );
+};
 
 export default RootLayout;
