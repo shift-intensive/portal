@@ -7,12 +7,16 @@ WORKDIR /app
 COPY package*.json ./
 COPY yarn.lock ./
 RUN yarn --production --frozen-lockfile
+RUN yarn add typescript
 
 COPY . .
 
+ENV NEXT_TELEMETRY_DISABLED=1
 RUN yarn build
 
 FROM base AS runner
+
+ENV NEXT_TELEMETRY_DISABLED=1
 
 COPY --from=builder /app/node_modules node_modules
 COPY --from=builder /app/.next .next
