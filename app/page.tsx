@@ -1,10 +1,19 @@
-import { BannerSection, FAQSection, StatisticSection } from './(components)';
+import {
+  BannerSection,
+  FAQSection,
+  MobileAppSection,
+  StatisticSection,
+  SubFooter
+} from './(components)';
 
 const Home = () => (
   <>
     <BannerSection />
     <StatisticSection />
+
+    <MobileAppSection />
     <FAQSection />
+    <SubFooter />
   </>
 );
 

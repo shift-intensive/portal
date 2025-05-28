@@ -1,3 +1,7 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui';
 
 const FAQ_ITEMS = [
@@ -34,13 +38,16 @@ const FAQ_ITEMS = [
 ];
 
 export const FAQSection = () => (
-  <section className='container mx-auto mt-20 flex flex-col items-center justify-center'>
-    <div className='mb-12 text-center'>
-      <div className='text-2xl'>Часто задаваемые вопросы</div>
-    </div>
+  <motion.section
+    animate={{ opacity: 1 }}
+    className='container mx-auto mt-20 flex flex-col items-center justify-center'
+    initial={{ opacity: 0 }}
+    transition={{ duration: 0.8 }}
+  >
+    <div className='mb-12 text-4xl font-bold'>Часто задаваемые вопросы</div>
 
-    <div className='flex w-full max-w-2xl flex-col items-center justify-center'>
-      <Accordion className='w-full space-y-4' type='single' collapsible>
+    <div className='flex w-full max-w-4xl flex-col items-center justify-center'>
+      <Accordion className='flex w-full flex-col gap-4' type='single' collapsible>
         {FAQ_ITEMS.map((item, index) => (
           <AccordionItem key={index} className='rounded-lg border px-6' value={index.toString()}>
             <AccordionTrigger className='text-left font-medium hover:no-underline'>
@@ -53,14 +60,5 @@ export const FAQSection = () => (
         ))}
       </Accordion>
     </div>
-
-    <div className='mt-6 text-center'>
-      <p className='text-muted-foreground text-xs'>
-        Остались вопросы? Напиши нам{' '}
-        <a href='mailto:support@acme.ai' className='text-foreground hover:underline'>
-          shiftintensiv@gmail.com
-        </a>
-      </p>
-    </div>
-  </section>
+  </motion.section>
 );

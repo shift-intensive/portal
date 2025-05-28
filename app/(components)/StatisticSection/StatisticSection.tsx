@@ -29,61 +29,59 @@ export const StatisticSection = () => (
     </motion.div>
 
     <motion.div
-      className='bg-card mt-6 max-w-4xl rounded-4xl border p-8'
+      className='bg-card mt-6 flex h-auto w-3xl items-center justify-between gap-22 rounded-4xl border p-8'
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.7, delay: 0.4 }}
       viewport={{ once: true }}
     >
-      <div className='flex h-auto items-center justify-between gap-12'>
-        <motion.div
-          className='flex flex-col items-center justify-center gap-2'
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <div className='flex justify-center gap-2'>
-            <div className='rounded-lg bg-fuchsia-100 p-3'>
-              <GraduationCapIcon className='size-6 text-fuchsia-600' />
-            </div>
-            <div className='text-4xl font-bold'>5000+</div>
+      <motion.div
+        className='flex flex-col items-center justify-center gap-2'
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        viewport={{ once: true }}
+      >
+        <div className='flex justify-center gap-4'>
+          <div className='rounded-lg bg-fuchsia-100 p-3'>
+            <GraduationCapIcon className='size-6 text-fuchsia-600' />
           </div>
-          <p className='text-sm'>Студентов обучено</p>
-        </motion.div>
+          <div className='text-4xl font-bold'>5000+</div>
+        </div>
+        <p className='text-sm'>Студентов обучено</p>
+      </motion.div>
 
-        <motion.div
-          className='flex flex-col items-center justify-center gap-2'
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <div className='flex justify-center gap-2'>
-            <div className='rounded-lg bg-violet-100 p-3'>
-              <BriefcaseIcon className='size-6 text-violet-600' />
-            </div>
-            <div className='text-4xl font-bold'>700+</div>
+      <motion.div
+        className='flex flex-col items-center justify-center gap-2'
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        viewport={{ once: true }}
+      >
+        <div className='flex justify-center gap-4'>
+          <div className='rounded-lg bg-violet-100 p-3'>
+            <BriefcaseIcon className='size-6 text-violet-600' />
           </div>
-          <p className='text-sm'>Студентов трудоустроено</p>
-        </motion.div>
+          <div className='text-4xl font-bold'>700+</div>
+        </div>
+        <p className='text-sm'>Студентов трудоустроено</p>
+      </motion.div>
 
-        <motion.div
-          className='flex flex-col items-center justify-center gap-2'
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <div className='flex justify-center gap-2'>
-            <div className='rounded-lg bg-amber-100 p-3'>
-              <UsersIcon className='size-6 text-amber-600' />
-            </div>
-            <div className='text-4xl font-bold'>300+</div>
+      <motion.div
+        className='flex flex-col items-center justify-center gap-2'
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        viewport={{ once: true }}
+      >
+        <div className='flex justify-center gap-4'>
+          <div className='rounded-lg bg-amber-100 p-3'>
+            <UsersIcon className='size-6 text-amber-600' />
           </div>
-          <p className='text-sm'>Кураторов с опытом</p>
-        </motion.div>
-      </div>
+          <div className='text-4xl font-bold'>300+</div>
+        </div>
+        <p className='text-sm'>Кураторов с опытом</p>
+      </motion.div>
     </motion.div>
   </motion.section>
 );
