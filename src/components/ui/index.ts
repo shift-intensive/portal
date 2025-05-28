@@ -1,4 +1,6 @@
+export * from './accordion';
 export * from './animated-shiny-text';
+export * from './badge';
 export * from './button';
 export * from './card';
 export * from './dock';

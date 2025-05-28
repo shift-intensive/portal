@@ -33,11 +33,13 @@ const RootLayout = async ({ children }: Readonly<RootLayoutProps>) => {
 
   return (
     <html className={theme} data-theme={theme}>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} mb-60`}>
         <Provider>
           <Header />
           <div className='mt-40'>{children}</div>
-          <DockPanel />
+          <div className='fixed right-0 bottom-5 left-0'>
+            <DockPanel />
+          </div>
         </Provider>
       </body>
     </html>

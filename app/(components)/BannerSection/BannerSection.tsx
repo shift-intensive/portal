@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRightIcon } from 'lucide-react';
+import { ArrowRightIcon, PizzaIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -14,7 +14,7 @@ const SECTIONS = [
     href: '/web',
     title: 'Веб',
     description: 'Создание современных веб-сайтов',
-    Icon: FrenchFries,
+    Icon: PizzaIcon,
     disabled: false
   },
   {
@@ -43,21 +43,42 @@ const SECTIONS = [
     title: 'Аналитика',
     description: 'Аналитика данных и бизнес-процессов',
     Icon: TestTubeIcon,
-    disabled: false
+    disabled: true
   },
   {
     href: '/ml',
     title: 'Machine Learning',
-    description: 'Машинное обучение и ИИ',
+    description: 'Машинное обучение',
     Icon: TestTubeIcon,
-    disabled: false
+    disabled: true
   },
   {
     href: '/backend',
     title: 'Backend',
     description: 'Серверная разработка',
-    Icon: TestTubeIcon,
+    Icon: FrenchFries,
     disabled: false
+  },
+  {
+    href: '/system-analysis',
+    title: 'Системный анализ',
+    description: 'Анализ и проектирование систем',
+    Icon: TestTubeIcon,
+    disabled: true
+  },
+  {
+    href: '/autotests',
+    title: 'Автотесты',
+    description: 'Автоматизированное тестирование',
+    Icon: TestTubeIcon,
+    disabled: true
+  },
+  {
+    href: '/information-security',
+    title: 'Информационная безопасность',
+    description: 'Защита информационных систем',
+    Icon: TestTubeIcon,
+    disabled: true
   }
 ];
 
@@ -73,7 +94,7 @@ export const BannerSection = () => (
         <div className='flex items-center justify-center'>
           <div
             className={cn(
-              'group rounded-full border border-black/5 bg-white text-base text-black transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800'
+              'group bg-card rounded-full border border-black/5 text-base text-black transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800'
             )}
           >
             <AnimatedShinyText className='inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400'>
@@ -87,20 +108,20 @@ export const BannerSection = () => (
           <Image alt='logo' height={201} src='/logo.png' width={596} />
         </div>
         <p className='mt-12 mb-8 text-xl opacity-80'>
-          ШИФТ Интенсив – бесплатный развивающий проект, цель которого – помочь
+          Бесплатный развивающий проект, цель которого – помочь
           <br />
           начинающим айтишникам прокачаться в выбранном направлении, стать
           <br />
           востребованными специалистами и получить работу
         </p>
 
-        <div className='mt-12 flex max-w-2xl flex-wrap justify-center gap-2'>
+        <div className='mt-12 flex max-w-3xl flex-wrap justify-center gap-2'>
           {SECTIONS.sort((a, b) => Number(a.disabled) - Number(b.disabled)).map(
             ({ title, Icon, href, disabled }) => (
               <div key={title}>
                 {disabled && (
                   <div className='opacity-50'>
-                    <div className='flex flex-col gap-2 rounded-lg border border-black/9 bg-white px-12 py-3'>
+                    <div className='bg-card flex flex-col gap-2 rounded-lg border border-black/9 px-12 py-3'>
                       <div className='text-xl'>{title}</div>
                     </div>
                   </div>
@@ -108,7 +129,7 @@ export const BannerSection = () => (
                 {!disabled && (
                   <Link href={href}>
                     <motion.div whileHover={{ scale: 1.04 }}>
-                      <div className='flex flex-col gap-2 rounded-lg border border-black/9 bg-white px-12 py-3'>
+                      <div className='bg-card flex flex-col gap-2 rounded-lg border border-black/9 px-12 py-3'>
                         <div className='text-xl'>{title}</div>
                       </div>
                     </motion.div>
