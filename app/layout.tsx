@@ -3,7 +3,13 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { cookies } from 'next/headers';
 
-import { DockPanel, Footer, Header } from './(components)';
+import {
+  DockPanel,
+  Footer,
+  GoogleTagManagerScript,
+  Header,
+  YandexMetrikaScript
+} from './(components)';
 import { Provider } from './provider';
 
 import './globals.css';
@@ -34,6 +40,9 @@ const RootLayout = async ({ children }: Readonly<RootLayoutProps>) => {
   return (
     <html className={theme} data-theme={theme}>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <YandexMetrikaScript />
+        <GoogleTagManagerScript />
+
         <Provider>
           <Header />
           <div className='mt-40'>{children}</div>
