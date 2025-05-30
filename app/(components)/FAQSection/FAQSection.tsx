@@ -40,7 +40,7 @@ const FAQ_ITEMS = [
 export const FAQSection = () => (
   <motion.section
     animate={{ opacity: 1 }}
-    className='container mx-auto mt-20 flex flex-col items-center justify-center px-8 lg:px-4'
+    className='container mx-auto mt-20 flex flex-col items-center justify-center px-8 md:mt-40 lg:px-4'
     initial={{ opacity: 0 }}
     transition={{ duration: 0.8 }}
   >
