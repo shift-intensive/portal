@@ -1,22 +1,14 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export const Footer = () => (
-  <motion.footer
-    className='bg-background border-border mt-40 border-t'
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
-    transition={{ duration: 0.8 }}
-    viewport={{ once: true }}
-  >
+  <footer className='bg-background border-border z-0 mt-40 border-t'>
     <div className='container mx-auto px-4 py-16'>
       <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4'>
-        {/* Logo and description */}
         <div className='space-y-4'>
-          <Image alt='logo' height={40} src='/logo.png' width={120} />
+          <Image alt='logo' height={40} src='/images/logo.png' width={120} />
           <p className='text-muted-foreground text-sm'>
             Бесплатный развивающий проект для начинающих айтишников
           </p>
@@ -174,5 +166,5 @@ export const Footer = () => (
         </div>
       </div>
     </div>
-  </motion.footer>
+  </footer>
 );

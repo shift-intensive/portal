@@ -12,26 +12,26 @@ export const SubFooter = () => (
     transition={{ duration: 0.8 }}
     viewport={{ once: true }}
   >
-    <VelocityScroll className='text-muted-foreground text-xs' defaultVelocity={1}>
+    <VelocityScroll className='text-muted-foreground text-8xl' defaultVelocity={1}>
       ШИФТ ИНТЕНСИВ
     </VelocityScroll>
 
     <motion.img
       alt='pixel decoration'
       animate={{ x: 0, y: 0, opacity: 1 }}
-      className='absolute top-1/2 left-8 z-20 w-[100px] -translate-y-[200px] sm:left-16 sm:w-[120px] sm:-translate-y-[250px] md:left-20 md:w-[140px] md:-translate-y-[280px] lg:left-32 lg:w-[160px] lg:-translate-y-[320px] xl:left-40 dark:opacity-60'
+      className='absolute top-1/2 -left-[50px] z-20 w-[120px] -translate-y-[200px] md:-left-[100px] md:w-[160px] md:-translate-y-[300px] lg:left-[150px] lg:w-[200px] lg:-translate-y-[300px] dark:opacity-60'
       initial={{ x: -50, y: -20, opacity: 0 }}
-      src='/second-pixel.png'
-      transition={{ duration: 0.8, delay: 0.2 }}
+      src='/images/second-pixel.png'
+      transition={{ duration: 0.4, delay: 0.2 }}
     />
 
     <motion.img
       alt='pixel decoration'
       animate={{ x: 0, y: 0, opacity: 1 }}
-      className='absolute top-1/2 -right-[25%] z-20 w-[600px] -translate-y-[200px] sm:-right-[20%] sm:w-[700px] sm:-translate-y-[120px] md:-right-[15%] md:w-[800px] md:-translate-y-[140px] lg:-right-[10%] lg:w-[900px] lg:-translate-y-[160px] xl:-right-[25%] dark:opacity-50'
+      className='absolute top-1/2 -right-[300px] z-20 w-[500px] -translate-y-[150px] md:-right-[400px] md:w-[600px] md:-translate-y-[120px] lg:w-[1000px] lg:-translate-y-[300px] xl:-right-[600px] dark:opacity-50'
       initial={{ x: 60, y: 30, opacity: 0 }}
-      src='/third-pixel.png'
-      transition={{ duration: 0.8, delay: 0.4 }}
+      src='/images/third-pixel.png'
+      transition={{ duration: 0.4, delay: 0.2 }}
     />
   </motion.section>
 );

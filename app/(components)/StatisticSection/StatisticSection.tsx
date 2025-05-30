@@ -8,7 +8,7 @@ import { Badge } from '@/components/ui';
 
 export const StatisticSection = () => (
   <motion.section
-    className='container mx-auto mt-40 flex flex-col items-center justify-center'
+    className='container mx-auto mt-10 flex max-w-4xl flex-col items-center justify-center px-4 lg:mt-40'
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.4 }}
@@ -21,15 +21,14 @@ export const StatisticSection = () => (
       transition={{ duration: 0.6, delay: 0.2 }}
       viewport={{ once: true }}
     >
-      <div className='flex items-center justify-center gap-3 text-2xl'>
-        <div>Готовим специалистов с</div>
-        <Badge className='bg-pink-500 px-2 text-2xl text-white'>2016</Badge>
-        <div>года</div>
+      <div className='hidden text-xl lg:block lg:text-2xl'>
+        Готовим специалистов с{' '}
+        <Badge className='bg-pink-500 px-2 text-xl text-white lg:text-2xl'>2016</Badge> года
       </div>
     </motion.div>
 
     <motion.div
-      className='bg-card mt-6 flex h-auto w-3xl items-center justify-between gap-22 rounded-4xl border p-8'
+      className='md:bg-card mt-6 flex w-full flex-wrap items-center justify-center gap-12 p-8 md:flex-row md:justify-between md:rounded-4xl md:border lg:gap-20'
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.7, delay: 0.4 }}

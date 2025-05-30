@@ -40,11 +40,11 @@ const FAQ_ITEMS = [
 export const FAQSection = () => (
   <motion.section
     animate={{ opacity: 1 }}
-    className='container mx-auto mt-20 flex flex-col items-center justify-center'
+    className='container mx-auto mt-20 flex flex-col items-center justify-center px-8 lg:px-4'
     initial={{ opacity: 0 }}
     transition={{ duration: 0.8 }}
   >
-    <div className='mb-12 text-4xl font-bold'>Часто задаваемые вопросы</div>
+    <h2 className='mb-12 text-4xl font-bold'>Часто задаваемые вопросы</h2>
 
     <div className='flex w-full max-w-4xl flex-col items-center justify-center'>
       <Accordion className='flex w-full flex-col gap-4' type='single' collapsible>

@@ -10,32 +10,29 @@ import { AnimatedShinyText, Iphone15Pro } from '@/components/ui';
 export const MobileAppSection = () => (
   <motion.section
     animate={{ opacity: 1 }}
-    className='container mx-auto mt-20 flex items-center justify-center'
+    className='container mx-auto mt-20 flex max-w-4xl items-center justify-center px-8 lg:mt-40 lg:px-4'
     initial={{ opacity: 0 }}
     transition={{ duration: 0.8 }}
   >
-    <div className='flex max-w-4xl items-center justify-between gap-10'>
-      <div className='flex flex-col items-start gap-2'>
+    <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
+      <div className='order-1 md:row-span-2'>
         <motion.div
           animate={{ y: 0, opacity: 1 }}
-          className='mb-6'
+          className='flex w-full flex-col items-center justify-center gap-4 md:items-start lg:items-start'
           initial={{ y: 20, opacity: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className='bg-card w-fit rounded-full border border-black/5 text-base text-black transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800'>
+          <div className='bg-card w-fit rounded-full border border-black/5 text-center text-base text-black transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800'>
             <AnimatedShinyText className='flex inline-flex items-center justify-center gap-2 px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400'>
               <Smartphone className='size-4' /> мобильное приложение
             </AnimatedShinyText>
           </div>
-          <h2 className='mt-4 text-3xl font-bold lg:text-4xl'>
-            Изучай IT прямо
-            <br />с телефона
-          </h2>
+          <h2 className='text-4xl font-bold'>Изучай IT прямо с телефона</h2>
         </motion.div>
 
         <motion.p
           animate={{ y: 0, opacity: 1 }}
-          className='text-muted-foreground mb-8 text-lg lg:text-xl'
+          className='text-muted-foreground text-md mt-6 mb-8 md:text-xl'
           initial={{ y: 20, opacity: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
@@ -46,7 +43,7 @@ export const MobileAppSection = () => (
 
         <motion.div
           animate={{ y: 0, opacity: 1 }}
-          className='mb-8 flex flex-col gap-4 sm:flex-row sm:gap-6'
+          className='mb-8 flex flex-wrap justify-center gap-6 md:flex-col'
           initial={{ y: 20, opacity: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
@@ -78,28 +75,28 @@ export const MobileAppSection = () => (
             </div>
           </div>
         </motion.div>
-
-        <motion.div
-          animate={{ y: 0, opacity: 1 }}
-          className='flex flex-col gap-4 sm:flex-row'
-          initial={{ y: 20, opacity: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-        >
-          <Link href='https://www.rustore.ru/catalog/app/ru.shiftlab.rustore'>
-            <img alt='RuStore' className='w-40' src='/rustore.png' />
-          </Link>
-        </motion.div>
       </div>
 
       <motion.div
-        animate={{ x: 0, opacity: 1 }}
-        className='flex flex-1 justify-center lg:justify-end'
-        initial={{ x: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        className='order-2 flex justify-center md:col-start-2 md:row-span-3 md:row-start-1'
+        initial={{ y: 50, opacity: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
-        <Iphone15Pro className='h-[584px] w-[284px]'>
+        <Iphone15Pro className='h-[650px] w-[350px]'>
           <Image alt='Mobile app preview' height={384} src='/mobile-app-preview.png' width={184} />
         </Iphone15Pro>
+      </motion.div>
+
+      <motion.div
+        animate={{ y: 0, opacity: 1 }}
+        className='order-3 flex justify-center md:col-start-1 md:row-start-3 md:justify-start'
+        initial={{ y: 20, opacity: 0 }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+      >
+        <Link href='https://www.rustore.ru/catalog/app/ru.shiftlab.rustore'>
+          <img alt='RuStore' className='w-40' src='/images/rustore.png' />
+        </Link>
       </motion.div>
     </div>
   </motion.section>

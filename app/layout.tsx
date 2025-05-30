@@ -10,6 +10,7 @@ import {
   Header,
   YandexMetrikaScript
 } from './(components)';
+import { getDictionary } from './(contexts)/intl/helpers/getDictionary';
 import { Provider } from './provider';
 
 import './globals.css';
@@ -33,19 +34,26 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
+const locale = 'ru';
+
 const RootLayout = async ({ children }: Readonly<RootLayoutProps>) => {
   const cookieStore = await cookies();
   const theme = cookieStore.get('theme')?.value;
+  const messages = await getDictionary(locale);
 
   return (
-    <html className={theme} data-theme={theme}>
+    <html className={theme} data-theme={theme} lang={locale}>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <YandexMetrikaScript />
-        <GoogleTagManagerScript />
+        {process.env.NODE_ENV === 'production' && (
+          <>
+            <YandexMetrikaScript />
+            <GoogleTagManagerScript />
+          </>
+        )}
 
-        <Provider>
+        <Provider intl={{ locale, messages }}>
           <Header />
-          <div className='mt-40'>{children}</div>
+          {children}
           <Footer />
           <div className='fixed right-0 bottom-5 left-0'>
             <DockPanel />
