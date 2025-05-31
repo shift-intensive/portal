@@ -3,7 +3,7 @@ import {
   FAQSection,
   MobileAppSection,
   StatisticSection,
-  SubFooter
+  SubFooterSection
 } from './(components)';
 
 const Home = () => (
@@ -13,7 +13,7 @@ const Home = () => (
 
     <MobileAppSection />
     <FAQSection />
-    <SubFooter />
+    <SubFooterSection />
   </>
 );
 

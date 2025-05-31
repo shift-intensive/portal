@@ -5,75 +5,9 @@ import { ArrowRightIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { AppleIcon, FrenchFries, PizzaIcon, RobotIcon, TestTubeIcon } from '@/components/icons';
+import { SECTIONS } from '@/app/(constants)';
 import { IntlText } from '@/components/intl';
 import { AnimatedShinyText, Pointer } from '@/components/ui';
-
-const SECTIONS = [
-  {
-    href: '/web',
-    title: 'Веб',
-    description: 'Создание современных веб-сайтов',
-    Icon: PizzaIcon,
-    disabled: false
-  },
-  {
-    href: '/ios',
-    title: 'iOS',
-    description: 'IOS разработка это недорого',
-    Icon: AppleIcon,
-    disabled: true
-  },
-  {
-    href: '/android',
-    title: 'Android',
-    description: 'Anroid приложения для всех',
-    Icon: RobotIcon,
-    disabled: false
-  },
-  {
-    href: '/test',
-    title: 'Тестирование',
-    description: 'Тестирование со всех сторон',
-    Icon: TestTubeIcon,
-    disabled: false
-  },
-  {
-    href: '/ml',
-    title: 'Machine Learning',
-    description: 'Машинное обучение',
-    Icon: TestTubeIcon,
-    disabled: true
-  },
-  {
-    href: '/backend',
-    title: 'Backend',
-    description: 'Серверная разработка',
-    Icon: FrenchFries,
-    disabled: false
-  },
-  {
-    href: '/system-analysis',
-    title: 'Системный анализ',
-    description: 'Анализ и проектирование систем',
-    Icon: TestTubeIcon,
-    disabled: true
-  },
-  {
-    href: '/autotests',
-    title: 'Автотесты',
-    description: 'Автоматизированное тестирование',
-    Icon: TestTubeIcon,
-    disabled: true
-  },
-  {
-    href: '/information-security',
-    title: 'Информационная безопасность',
-    description: 'Защита информационных систем',
-    Icon: TestTubeIcon,
-    disabled: true
-  }
-];
 
 export const BannerSection = () => (
   <section className='relative mt-20 overflow-x-clip lg:mt-40'>
@@ -136,7 +70,7 @@ export const BannerSection = () => (
     <motion.img
       alt='pixel'
       animate={{ x: 0, y: 0, opacity: 1 }}
-      className='absolute top-1/2 -right-[60px] w-[120px] -translate-y-[300px] lg:right-14 lg:w-[200px] lg:-translate-y-[500px] dark:opacity-80'
+      className='absolute top-1/2 -right-[70px] w-[120px] -translate-y-[400px] lg:right-14 lg:w-[200px] lg:-translate-y-[500px] dark:opacity-80'
       initial={{ x: 70, y: -30, opacity: 0 }}
       src='/images/second-pixel.png'
       transition={{ duration: 0.4, delay: 0.2 }}
@@ -144,7 +78,7 @@ export const BannerSection = () => (
     <motion.img
       alt='pixel'
       animate={{ x: 0, y: 0, opacity: 1 }}
-      className='absolute top-1/2 -left-[400px] w-[500px] -translate-y-[5px] lg:-left-[400px] lg:w-[800px] lg:-translate-y-[200px] 2xl:-left-[400px] 2xl:w-[900px] dark:opacity-80'
+      className='absolute top-1/2 -left-[320px] w-[500px] -translate-y-[25px] lg:-left-[400px] lg:w-[800px] lg:-translate-y-[200px] 2xl:-left-[400px] 2xl:w-[900px] dark:opacity-80'
       initial={{ x: -70, y: 20, opacity: 0 }}
       src='/images/first-pixel.png'
       transition={{ duration: 0.4, delay: 0.2 }}
@@ -152,7 +86,7 @@ export const BannerSection = () => (
     <motion.img
       alt='pixel'
       animate={{ x: 0, y: 0, opacity: 1 }}
-      className='absolute top-1/2 -right-[400px] w-[500px] translate-y-[180px] lg:-right-[400px] lg:w-[800px] lg:translate-y-[200px] 2xl:-right-[300px] 2xl:w-[900px] dark:opacity-80'
+      className='absolute top-1/2 -right-[300px] w-[500px] translate-y-[180px] lg:-right-[400px] lg:w-[800px] lg:translate-y-[200px] 2xl:-right-[300px] 2xl:w-[900px] dark:opacity-80'
       initial={{ x: 70, y: 60, opacity: 0 }}
       src='/images/first-pixel.png'
       transition={{ duration: 0.4, delay: 0.2 }}

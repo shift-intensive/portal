@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 import { VelocityScroll } from '@/components/ui';
 
-export const SubFooter = () => (
+export const SubFooterSection = () => (
   <motion.section
     className='relative mt-40 overflow-x-clip'
     initial={{ opacity: 0 }}

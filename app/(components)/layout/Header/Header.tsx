@@ -14,11 +14,7 @@ export const Header = () => (
 
       <div className='flex items-center gap-1'>
         <Button asChild size='icon' variant='ghost'>
-          <Link
-            href='https://github.com/shift-intensive/portal'
-            rel='noopener noreferrer'
-            target='_blank'
-          >
+          <Link href='https://github.com/shift-intensive' rel='noopener noreferrer' target='_blank'>
             <GithubIcon />
           </Link>
         </Button>

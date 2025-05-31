@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Wix_Madefor_Text } from 'next/font/google';
 import { cookies } from 'next/headers';
 
 import {
@@ -15,13 +15,8 @@ import { Provider } from './provider';
 
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin']
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const wixMadeforText = Wix_Madefor_Text({
+  variable: '--font-wix-madefor-text',
   subsets: ['latin']
 });
 
@@ -43,7 +38,7 @@ const RootLayout = async ({ children }: Readonly<RootLayoutProps>) => {
 
   return (
     <html className={theme} data-theme={theme} lang={locale}>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${wixMadeforText.variable}`}>
         {process.env.NODE_ENV === 'production' && (
           <>
             <YandexMetrikaScript />
