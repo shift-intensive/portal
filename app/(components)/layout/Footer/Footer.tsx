@@ -60,7 +60,7 @@ export const Footer = () => {
             </div>
           </div>
 
-          <div className='flex flex-col justify-between gap-4 md:flex-row'>
+          <div className='flex flex-col justify-between gap-4 md:flex-row md:gap-20'>
             <div className='space-y-4'>
               <h3 className='text-sm font-semibold'>
                 <IntlText path='footer.directions.title' />
