@@ -949,10 +949,10 @@
   dependencies:
     prettier "^3.5.3"
 
-"@siberiacancode/reactuse@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@siberiacancode/reactuse/-/reactuse-0.2.2.tgz#ab22bc57696659e7e9fac1639cd9f9f292ba724b"
-  integrity sha512-BTrZPvJA2AQqTntevOm9kKZcTx6+4w32DYQstsHHIZuKiL0SzODuoVXXZhyqymGTmUiq3TG1q6vYHnFuM6AY5Q==
+"@siberiacancode/reactuse@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@siberiacancode/reactuse/-/reactuse-0.2.3.tgz#a2f2f5edb5b5a2c6ab11ada6b56f5d599feeaf28"
+  integrity sha512-dACw1BqgERSRpCUETNQvrIptFYDPPxbPqm23eHjawDC9+IOy4lvuUz1Ta1ZzK4k2CCO83BLbEXLVR/K6e2JpDw==
   dependencies:
     screenfull "^6.0.2"
 

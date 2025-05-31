@@ -46,7 +46,7 @@ const RootLayout = async ({ children }: Readonly<RootLayoutProps>) => {
           </>
         )}
 
-        <Provider intl={{ locale, messages }}>
+        <Provider intl={{ locale, messages }} theme={{ initialValue: theme as 'dark' | 'light' }}>
           <Header />
           {children}
           <Footer />

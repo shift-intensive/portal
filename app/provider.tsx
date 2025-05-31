@@ -10,10 +10,11 @@ import { themeContext } from './(contexts)/theme';
 interface ProviderProps {
   children: React.ReactNode;
   intl: IntlProviderProps;
+  theme: Omit<React.ComponentProps<typeof themeContext.Provider>, 'children'>;
 }
 
-export const Provider = ({ children, intl }: ProviderProps) => (
+export const Provider = ({ children, intl, theme }: ProviderProps) => (
   <IntlProvider {...intl}>
-    <themeContext.Provider>{children}</themeContext.Provider>
+    <themeContext.Provider {...theme}>{children}</themeContext.Provider>
   </IntlProvider>
 );

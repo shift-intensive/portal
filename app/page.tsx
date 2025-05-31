@@ -6,15 +6,14 @@ import {
   SubFooterSection
 } from './(components)';
 
-const Home = () => (
+const HomePage = () => (
   <>
     <BannerSection />
     <StatisticSection />
-
     <MobileAppSection />
     <FAQSection />
     <SubFooterSection />
   </>
 );
 
-export default Home;
+export default HomePage;

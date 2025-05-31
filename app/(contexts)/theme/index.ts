@@ -1,6 +1,6 @@
 import { createContext, setCookie } from '@siberiacancode/reactuse';
 
-type ThemeContextValue = 'dark' | 'light';
+export type ThemeContextValue = 'dark' | 'light';
 
 export const themeContext = createContext<ThemeContextValue>('light');
 

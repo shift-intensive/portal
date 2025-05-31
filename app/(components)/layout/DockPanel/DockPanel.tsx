@@ -23,7 +23,7 @@ export const DockPanel = () => (
     <Dock direction='middle'>
       <DockIcon>
         <Tooltip>
-          <TooltipTrigger asChild>
+          <TooltipTrigger>
             <Link
               href='/'
               className={cn(
@@ -43,14 +43,14 @@ export const DockPanel = () => (
       {SECTIONS.filter(({ disabled }) => !disabled).map(({ href, Icon }) => (
         <DockIcon key={href}>
           <Tooltip>
-            <TooltipTrigger asChild>
+            <TooltipTrigger>
               <Link
                 href={href}
                 className={cn(
                   buttonVariants({ variant: 'ghost', size: 'icon' }),
                   'size-12 rounded-full'
                 )}
-                aria-label={href}
+                aria-label={href.slice(1)}
               >
                 <Icon className='size-4' />
               </Link>
@@ -64,7 +64,7 @@ export const DockPanel = () => (
       <Separator className='h-full py-2' orientation='vertical' />
       <DockIcon>
         <Tooltip>
-          <TooltipTrigger asChild>
+          <TooltipTrigger>
             <Button asChild size='icon' variant='ghost'>
               <Link
                 href='https://github.com/shift-intensive'
@@ -82,11 +82,11 @@ export const DockPanel = () => (
       </DockIcon>
       <DockIcon>
         <Tooltip>
-          <TooltipTrigger asChild>
+          <TooltipTrigger>
             <ThemeButton />
           </TooltipTrigger>
           <TooltipContent>
-            <p>Theme</p>
+            <p>theme</p>
           </TooltipContent>
         </Tooltip>
       </DockIcon>
