@@ -2,38 +2,33 @@
 
 import { motion } from 'framer-motion';
 
+import { IntlText } from '@/components/intl';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui';
 
 const FAQ_ITEMS = [
   {
-    question: 'Что такое "ШИФТ ИНТЕНСИВ"?',
-    answer:
-      'ШИФТ ИНТЕНСИВ – это проект для студентов 1-го курса и старше, которые хотят развиваться в IT. В программе школы: лекции, деловые игры и проектные мастерские от IT специалистов. В конце программы участники презентуют собственные финтех-проекты, разработанные под руководством кураторов. Лучшие выпускники ШИФТ приглашаются на работу или стажировку в компании партнеров.'
+    question: 'section.faq.0.question',
+    answer: 'section.faq.0.answer'
   },
   {
-    question: 'Какие секции есть на интенсиве?',
-    answer:
-      'На интенсиве представлены следующие секции: Frontend разработка, Backend разработка, Mobile разработка, Data Science и аналитика, DevOps и инфраструктура, UI/UX дизайн, Product менеджмент. Каждая секция включает теоретические лекции, практические задания и работу над реальными проектами под руководством опытных наставников.'
+    question: 'section.faq.1.question',
+    answer: 'section.faq.1.answer'
   },
   {
-    question: 'Можно ли сменить секцию?',
-    answer:
-      'После открытия интенсива смена секции невозможна. Выбор секции происходит на этапе подачи заявки, поэтому важно заранее определиться с направлением, которое вам наиболее интересно. Рекомендуем внимательно изучить описание каждой секции и выбрать ту, которая соответствует вашим интересам и целям развития в IT.'
+    question: 'section.faq.2.question',
+    answer: 'section.faq.2.answer'
   },
   {
-    question: 'Можно ли участвовать в нескольких секциях?',
-    answer:
-      'Нет, участвовать можно только в одной секции. Это связано с интенсивностью программы и необходимостью полного погружения в выбранное направление. Каждая секция требует значительных временных затрат и концентрации на конкретных технологиях и практиках, поэтому участие в нескольких секциях одновременно невозможно.'
+    question: 'section.faq.3.question',
+    answer: 'section.faq.3.answer'
   },
   {
-    question: 'Что будет, если пропущу пару дней?',
-    answer:
-      'Ничего критичного не произойдет, если вы пропустите пару дней. Все материалы и записи лекций остаются доступными для изучения в удобное время. Однако важно помнить, что интенсив требует активного участия и регулярной работы над проектом. Постарайтесь наверстать пропущенный материал и обратитесь к кураторам, если возникнут вопросы.'
+    question: 'section.faq.4.question',
+    answer: 'section.faq.4.answer'
   },
   {
-    question: 'Когда можно дергать кураторов?',
-    answer:
-      'Каждый куратор индивидуально подбирает время для ответа на вопросы или код ревью проектов. Можно писать в любое время в доступные источники связи, но ответ может быть не моментальный.'
+    question: 'section.faq.5.question',
+    answer: 'section.faq.5.answer'
   }
 ];
 
@@ -44,17 +39,19 @@ export const FAQSection = () => (
     initial={{ opacity: 0 }}
     transition={{ duration: 0.8 }}
   >
-    <h2 className='mb-12 text-4xl font-bold'>Часто задаваемые вопросы</h2>
+    <h2 className='mb-12 text-4xl font-bold'>
+      <IntlText path='section.faq.title' />
+    </h2>
 
     <div className='flex w-full max-w-4xl flex-col items-center justify-center'>
       <Accordion className='flex w-full flex-col gap-4' type='single' collapsible>
         {FAQ_ITEMS.map((item, index) => (
           <AccordionItem key={index} className='rounded-lg border px-6' value={index.toString()}>
             <AccordionTrigger className='text-left font-medium hover:no-underline'>
-              {item.question}
+              <IntlText path={item.question as MessagePath} />
             </AccordionTrigger>
             <AccordionContent className='text-muted-foreground pb-4'>
-              {item.answer}
+              <IntlText path={item.answer as MessagePath} />
             </AccordionContent>
           </AccordionItem>
         ))}

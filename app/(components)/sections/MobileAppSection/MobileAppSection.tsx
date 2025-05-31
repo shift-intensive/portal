@@ -5,6 +5,7 @@ import { CalendarIcon, Smartphone, StarIcon, UsersIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { IntlText } from '@/components/intl';
 import { AnimatedShinyText, Iphone15Pro } from '@/components/ui';
 
 export const MobileAppSection = () => (
@@ -24,10 +25,12 @@ export const MobileAppSection = () => (
         >
           <div className='bg-card w-fit rounded-full border border-black/5 text-center text-base text-black transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800'>
             <AnimatedShinyText className='flex inline-flex items-center justify-center gap-2 px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400'>
-              <Smartphone className='size-4' /> мобильное приложение
+              <Smartphone className='size-4' /> <IntlText path='section.mobileapp.badge' />
             </AnimatedShinyText>
           </div>
-          <h2 className='text-4xl font-bold'>Изучай IT прямо с телефона</h2>
+          <h2 className='text-4xl font-bold'>
+            <IntlText path='section.mobileapp.title' />
+          </h2>
         </motion.div>
 
         <motion.p
@@ -36,9 +39,7 @@ export const MobileAppSection = () => (
           initial={{ y: 20, opacity: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          Приложение поможет сделать участие в интенсивах более удобным и информативным. Теперь все
-          важные сведения находятся в одном месте, а участники могут всегда быть в курсе всех
-          изменений и новостей
+          <IntlText path='section.mobileapp.description' />
         </motion.p>
 
         <motion.div
@@ -52,8 +53,12 @@ export const MobileAppSection = () => (
               <CalendarIcon className='size-6 text-green-600' />
             </div>
             <div>
-              <div className='text-sm font-semibold'>Расписание</div>
-              <div className='text-muted-foreground text-xs'>всегда под рукой</div>
+              <div className='text-sm font-semibold'>
+                <IntlText path='section.mobileapp.feature.schedule' />
+              </div>
+              <div className='text-muted-foreground text-xs'>
+                <IntlText path='section.mobileapp.feature.schedule.desc' />
+              </div>
             </div>
           </div>
           <div className='flex items-center gap-2'>
@@ -61,8 +66,12 @@ export const MobileAppSection = () => (
               <StarIcon className='size-6 text-blue-600' />
             </div>
             <div>
-              <div className='text-sm font-semibold'>Нотификации</div>
-              <div className='text-muted-foreground text-xs'>не пропустите важное</div>
+              <div className='text-sm font-semibold'>
+                <IntlText path='section.mobileapp.feature.notifications' />
+              </div>
+              <div className='text-muted-foreground text-xs'>
+                <IntlText path='section.mobileapp.feature.notifications.desc' />
+              </div>
             </div>
           </div>
           <div className='flex items-center gap-2'>
@@ -70,8 +79,12 @@ export const MobileAppSection = () => (
               <UsersIcon className='size-6 text-purple-600' />
             </div>
             <div>
-              <div className='text-sm font-semibold'>Опросы</div>
-              <div className='text-muted-foreground text-xs'>поделитесь мнением</div>
+              <div className='text-sm font-semibold'>
+                <IntlText path='section.mobileapp.feature.polls' />
+              </div>
+              <div className='text-muted-foreground text-xs'>
+                <IntlText path='section.mobileapp.feature.polls.desc' />
+              </div>
             </div>
           </div>
         </motion.div>

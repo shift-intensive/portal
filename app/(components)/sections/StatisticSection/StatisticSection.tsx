@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { BriefcaseIcon, GraduationCapIcon, UsersIcon } from 'lucide-react';
 import React from 'react';
 
+import { IntlText } from '@/components/intl';
 import { Badge } from '@/components/ui';
 
 export const StatisticSection = () => (
@@ -22,8 +23,15 @@ export const StatisticSection = () => (
       viewport={{ once: true }}
     >
       <div className='hidden text-xl lg:block lg:text-2xl'>
-        Готовим специалистов с{' '}
-        <Badge className='bg-pink-500 px-2 text-xl text-white lg:text-2xl'>2016</Badge> года
+        <IntlText
+          values={{
+            year: 2016,
+            badge: (year) => (
+              <Badge className='bg-pink-500 px-2 text-xl text-white lg:text-2xl'>{year}</Badge>
+            )
+          }}
+          path='section.statistic.since'
+        />
       </div>
     </motion.div>
 
@@ -47,7 +55,9 @@ export const StatisticSection = () => (
           </div>
           <div className='text-4xl font-bold'>5000+</div>
         </div>
-        <p className='text-sm'>Студентов обучено</p>
+        <p className='text-sm'>
+          <IntlText path='section.statistic.students' />
+        </p>
       </motion.div>
 
       <motion.div
@@ -63,7 +73,9 @@ export const StatisticSection = () => (
           </div>
           <div className='text-4xl font-bold'>700+</div>
         </div>
-        <p className='text-sm'>Студентов трудоустроено</p>
+        <p className='text-sm'>
+          <IntlText path='section.statistic.employed' />
+        </p>
       </motion.div>
 
       <motion.div
@@ -79,7 +91,9 @@ export const StatisticSection = () => (
           </div>
           <div className='text-4xl font-bold'>300+</div>
         </div>
-        <p className='text-sm'>Кураторов с опытом</p>
+        <p className='text-sm'>
+          <IntlText path='section.statistic.mentors' />
+        </p>
       </motion.div>
     </motion.div>
   </motion.section>

@@ -32,8 +32,7 @@ export const BannerSection = () => (
         <div className='mt-8 flex flex-col items-center justify-center px-4'>
           <Image alt='logo' height={201} src='/images/logo.png' width={596} />
           <p className='text-md mt-6 mb-8 max-w-[550px] opacity-80 lg:mt-12 lg:text-xl'>
-            Бесплатный развивающий проект, цель которого – помочь начинающим айтишникам прокачаться
-            в выбранном направлении, стать востребованными специалистами
+            <IntlText path='section.banner.description' />
           </p>
         </div>
 
@@ -44,7 +43,9 @@ export const BannerSection = () => (
                 {disabled && (
                   <div className='opacity-50'>
                     <div className='bg-card flex flex-col gap-2 rounded-lg border border-black/9 px-10 py-3 lg:px-12'>
-                      <div className='text-lg lg:text-xl'>{title}</div>
+                      <div className='text-lg lg:text-xl'>
+                        <IntlText path={title as MessagePath} />
+                      </div>
                     </div>
                   </div>
                 )}
@@ -52,7 +53,9 @@ export const BannerSection = () => (
                   <Link href={href}>
                     <motion.div whileHover={{ scale: 1.04 }}>
                       <div className='bg-card flex flex-col gap-2 rounded-lg border border-black/9 px-10 py-3 lg:px-12'>
-                        <div className='text-lg lg:text-xl'>{title}</div>
+                        <div className='text-lg lg:text-xl'>
+                          <IntlText path={title as MessagePath} />
+                        </div>
                       </div>
                     </motion.div>
                     <Pointer className='z-10'>

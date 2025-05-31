@@ -3,64 +3,55 @@ import { AppleIcon, FrenchFries, PizzaIcon, RobotIcon, TestTubeIcon } from '@/co
 export const SECTIONS = [
   {
     href: '/web',
-    title: 'Веб',
-    description: 'Создание современных веб-сайтов',
+    title: 'section.web',
     Icon: PizzaIcon,
     disabled: false
   },
   {
     href: '/ios',
-    title: 'iOS',
-    description: 'IOS разработка это недорого',
+    title: 'section.ios',
     Icon: AppleIcon,
     disabled: true
   },
   {
     href: '/android',
-    title: 'Android',
-    description: 'Anroid приложения для всех',
+    title: 'section.android',
     Icon: RobotIcon,
     disabled: false
   },
   {
     href: '/test',
-    title: 'Тестирование',
-    description: 'Тестирование со всех сторон',
+    title: 'section.test',
     Icon: TestTubeIcon,
     disabled: false
   },
   {
     href: '/ml',
-    title: 'Machine Learning',
-    description: 'Машинное обучение',
+    title: 'section.ml',
     Icon: TestTubeIcon,
     disabled: true
   },
   {
     href: '/backend',
-    title: 'Backend',
-    description: 'Серверная разработка',
+    title: 'section.backend',
     Icon: FrenchFries,
     disabled: false
   },
   {
     href: '/system-analysis',
-    title: 'Системный анализ',
-    description: 'Анализ и проектирование систем',
+    title: 'section.system-analysis',
     Icon: TestTubeIcon,
     disabled: true
   },
   {
     href: '/autotests',
-    title: 'Автотесты',
-    description: 'Автоматизированное тестирование',
+    title: 'section.autotests',
     Icon: TestTubeIcon,
     disabled: true
   },
   {
     href: '/information-security',
-    title: 'Информационная безопасность',
-    description: 'Защита информационных систем',
+    title: 'section.information-security',
     Icon: TestTubeIcon,
     disabled: true
   }
