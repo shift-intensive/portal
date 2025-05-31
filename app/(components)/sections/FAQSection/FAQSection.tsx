@@ -43,7 +43,7 @@ export const FAQSection = () => (
       <IntlText path='section.faq.title' />
     </h2>
 
-    <div className='flex w-full max-w-4xl flex-col items-center justify-center'>
+    <div className='flex w-full max-w-4xl flex-col items-center justify-center lg:px-4'>
       <Accordion className='flex w-full flex-col gap-4' type='single' collapsible>
         {FAQ_ITEMS.map((item, index) => (
           <AccordionItem key={index} className='rounded-lg border px-6' value={index.toString()}>
