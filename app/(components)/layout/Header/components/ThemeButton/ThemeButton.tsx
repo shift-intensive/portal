@@ -5,9 +5,7 @@ import { MoonIcon, SunIcon } from 'lucide-react';
 import { setTheme, themeContext } from '@/app/(contexts)/theme';
 import { Button } from '@/components/ui';
 
-export type ThemeButtonProps = Omit<React.ComponentProps<typeof Button>, 'onClick'>;
-
-export const ThemeButton = (props: ThemeButtonProps) => {
+export const ThemeButton = () => {
   const theme = themeContext.useSelect();
 
   const onThemeClick = () => {
@@ -17,7 +15,7 @@ export const ThemeButton = (props: ThemeButtonProps) => {
   };
 
   return (
-    <Button size='icon' variant='ghost' onClick={onThemeClick} {...props}>
+    <Button size='icon' variant='ghost' onClick={onThemeClick}>
       {theme.value === 'dark' ? <SunIcon /> : <MoonIcon />}
     </Button>
   );

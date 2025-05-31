@@ -6,7 +6,7 @@ import { useIntl } from 'react-intl';
 import { GithubIcon } from '@/components/icons';
 import { Button } from '@/components/ui';
 
-import { ThemeButton } from '../ThemeButton/ThemeButton';
+import { ThemeButton } from './components';
 
 export const Header = () => {
   const intl = useIntl();
