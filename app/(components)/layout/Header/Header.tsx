@@ -1,12 +1,24 @@
 'use client';
 
+import { Loader2Icon } from 'lucide-react';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useIntl } from 'react-intl';
 
 import { GithubIcon } from '@/components/icons';
 import { Button } from '@/components/ui';
 
-import { ThemeButton } from './components';
+const ThemeButton = dynamic(
+  () => import('./components/ThemeButton/ThemeButton').then((module) => module.ThemeButton),
+  {
+    ssr: false,
+    loading: () => (
+      <Button size='icon' variant='ghost'>
+        <Loader2Icon className='size-4 animate-spin' />
+      </Button>
+    )
+  }
+);
 
 export const Header = () => {
   const intl = useIntl();

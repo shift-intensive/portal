@@ -1,22 +1,22 @@
 'use client';
 
+import type { ComponentProps } from 'react';
+
 import { MoonIcon, SunIcon } from 'lucide-react';
 
-import { setTheme, themeContext } from '@/app/(contexts)/theme';
+import { useTheme } from '@/app/(contexts)/theme';
 import { Button } from '@/components/ui';
 
-export const ThemeButton = () => {
-  const theme = themeContext.useSelect();
+type ThemeButtonProps = ComponentProps<typeof Button>;
 
-  const onThemeClick = () => {
-    const updatedTheme = theme.value === 'dark' ? 'light' : 'dark';
-    setTheme(updatedTheme);
-    theme.set(updatedTheme);
-  };
+export const ThemeButton = (props: ThemeButtonProps) => {
+  const theme = useTheme();
+
+  const onThemeClick = () => theme.set(theme.value === 'dark' ? 'light' : 'dark');
 
   return (
-    <Button size='icon' variant='ghost' onClick={onThemeClick}>
-      {theme.value === 'dark' ? <SunIcon /> : <MoonIcon />}
+    <Button size='icon' variant='ghost' onClick={onThemeClick} {...props}>
+      {theme.value === 'dark' ? <SunIcon className='size-4' /> : <MoonIcon className='size-4' />}
     </Button>
   );
 };

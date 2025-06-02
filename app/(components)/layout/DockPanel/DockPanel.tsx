@@ -4,7 +4,7 @@ import { HouseIcon, MoonIcon, SunIcon } from 'lucide-react';
 import Link from 'next/link';
 
 import { SECTIONS } from '@/app/(constants)';
-import { setTheme, themeContext } from '@/app/(contexts)/theme';
+import { useTheme } from '@/app/(contexts)/theme';
 import { GithubIcon } from '@/components/icons';
 import {
   Button,
@@ -20,13 +20,9 @@ import {
 import { cn } from '@/lib/utils';
 
 export const DockPanel = () => {
-  const theme = themeContext.useSelect();
+  const theme = useTheme();
 
-  const onThemeClick = () => {
-    const updatedTheme = theme.value === 'dark' ? 'light' : 'dark';
-    setTheme(updatedTheme);
-    theme.set(updatedTheme);
-  };
+  const onThemeClick = () => theme.set(theme.value === 'dark' ? 'light' : 'dark');
 
   return (
     <TooltipProvider>

@@ -1,15 +1,8 @@
 import type { Metadata } from 'next';
 
 import { Wix_Madefor_Text } from 'next/font/google';
-import { cookies } from 'next/headers';
 
-import {
-  DockPanel,
-  Footer,
-  GoogleTagManagerScript,
-  Header,
-  YandexMetrikaScript
-} from './(components)';
+import { Footer, GoogleTagManagerScript, Header, YandexMetrikaScript } from './(components)';
 import { getDictionary } from './(contexts)/intl/helpers/getDictionary';
 import { Provider } from './provider';
 
@@ -32,12 +25,20 @@ interface RootLayoutProps {
 const locale = 'ru';
 
 const RootLayout = async ({ children }: Readonly<RootLayoutProps>) => {
-  const cookieStore = await cookies();
-  const theme = cookieStore.get('theme')?.value;
   const messages = await getDictionary(locale);
 
   return (
-    <html className={theme} data-theme={theme} lang={locale}>
+    <html lang={locale}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              const theme = document.cookie.match(/theme=(.*?)(;|$)/)?.[1] || 'light';
+              document.documentElement.classList.add(theme);
+            `
+          }}
+        />
+      </head>
       <body className={`${wixMadeforText.variable}`}>
         {process.env.NODE_ENV === 'production' && (
           <>
@@ -46,13 +47,10 @@ const RootLayout = async ({ children }: Readonly<RootLayoutProps>) => {
           </>
         )}
 
-        <Provider intl={{ locale, messages }} theme={{ initialValue: theme as 'dark' | 'light' }}>
+        <Provider intl={{ locale, messages }}>
           <Header />
           {children}
           <Footer />
-          <div className='fixed right-0 bottom-5 left-0'>
-            <DockPanel />
-          </div>
         </Provider>
       </body>
     </html>
