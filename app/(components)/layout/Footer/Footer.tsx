@@ -1,12 +1,12 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useIntl } from 'react-intl';
 
 import { SECTIONS } from '@/app/(constants)';
 import { GithubIcon, TelegramIcon, VkIcon } from '@/components/icons';
 import { IntlText } from '@/components/intl';
+import { Logo } from '@/components/shared';
 
 const SOCIALS = [
   {
@@ -30,16 +30,11 @@ export const Footer = () => {
   const intl = useIntl();
 
   return (
-    <footer className='bg-background border-border z-0 mt-40 mb-20 border-t'>
+    <footer className='bg-background border-border z-0 my-20 border-t'>
       <div className='container mx-auto px-4 py-16'>
         <div className='flex flex-col justify-between gap-4 md:flex-row'>
           <div className='space-y-4'>
-            <Image
-              alt={intl.formatMessage({ id: 'footer.logo.alt' })}
-              height={40}
-              src='/images/logo.png'
-              width={120}
-            />
+            <Logo alt={intl.formatMessage({ id: 'footer.logo.alt' })} className='w-10' />
             <p className='text-muted-foreground text-sm'>
               <IntlText path='footer.description' />
             </p>
@@ -89,31 +84,23 @@ export const Footer = () => {
 
             <div className='space-y-4'>
               <h3 className='text-sm font-semibold'>
-                <IntlText path='footer.company.title' />
+                <IntlText path='footer.ecosystem.title' />
               </h3>
               <ul className='space-y-2 text-sm'>
                 <li>
                   <Link
-                    href='/about'
+                    href='https://team.cft.ru/start/school'
                     className='text-muted-foreground hover:text-foreground transition-colors'
                   >
-                    <IntlText path='footer.company.about' />
+                    <IntlText path='footer.ecosystem.courses' />
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href='/blog'
+                    href='https://team.cft.ru/events/130'
                     className='text-muted-foreground hover:text-foreground transition-colors'
                   >
-                    <IntlText path='footer.company.courses' />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href='/careers'
-                    className='text-muted-foreground hover:text-foreground transition-colors'
-                  >
-                    <IntlText path='footer.company.lab' />
+                    <IntlText path='footer.ecosystem.lab' />
                   </Link>
                 </li>
               </ul>

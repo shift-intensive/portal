@@ -44,7 +44,7 @@ export const MobileAppSection = () => (
 
         <motion.div
           animate={{ y: 0, opacity: 1 }}
-          className='mb-8 flex flex-wrap justify-center gap-6 md:flex-col'
+          className='mb-8 flex flex-wrap justify-start gap-6 md:flex-col md:justify-center'
           initial={{ y: 20, opacity: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >

@@ -24,7 +24,7 @@ export const Provider = ({ children, intl }: ProviderProps) => (
   <IntlProvider {...intl}>
     <ThemeProvider>
       {children}
-      <div className='fixed right-0 bottom-5 left-0'>
+      <div className='fixed right-0 bottom-5 left-0 z-11'>
         <DockPanel />
       </div>
     </ThemeProvider>

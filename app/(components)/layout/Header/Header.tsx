@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useIntl } from 'react-intl';
 
 import { GithubIcon } from '@/components/icons';
+import { Logo } from '@/components/shared';
 import { Button } from '@/components/ui';
 
 const ThemeButton = dynamic(
@@ -27,11 +28,7 @@ export const Header = () => {
     <header className='w-full'>
       <div className='container mx-auto flex h-16 items-center justify-between px-4'>
         <Link href='/' className='flex items-center'>
-          <img
-            alt={intl.formatMessage({ id: 'header.logo.alt' })}
-            className='w-10'
-            src='/images/logo.png'
-          />
+          <Logo alt={intl.formatMessage({ id: 'header.logo.alt' })} className='w-10' />
         </Link>
 
         <div className='flex items-center gap-1'>
