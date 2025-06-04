@@ -28,7 +28,7 @@ const RootLayout = async ({ children }: Readonly<RootLayoutProps>) => {
   const messages = await getDictionary(locale);
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
