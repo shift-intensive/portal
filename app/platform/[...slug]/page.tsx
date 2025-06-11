@@ -2,9 +2,9 @@ import fs from 'node:fs';
 import { join } from 'node:path';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string[];
-  };
+  }>;
 }
 
 export const generateStaticParams = async () => {
@@ -41,8 +41,9 @@ export const generateStaticParams = async () => {
 };
 
 const Page = async ({ params }: PageProps) => {
-  console.log('params', `../${await params.slug.join('/')}/index.mdx`);
-  const Content = await import(`../(contents)/${await params.slug.join('/')}/index.mdx`);
+  const { slug } = await params;
+  console.log('slug', slug);
+  const Content = await import(`../(contents)/${slug.join('/')}/index.mdx`);
 
   return <Content.default />;
 };

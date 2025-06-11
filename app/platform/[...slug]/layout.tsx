@@ -22,7 +22,8 @@ interface BreadcrumbItemType {
 }
 
 export async function generateMetadata({ params }: ContentsLayoutProps) {
-  const { slug } = params;
+  const { slug } = await params;
+  console.log('@@@', slug);
   const module = await import(`../(contents)/${slug.join('/')}/index.mdx`);
 
   return {
@@ -49,7 +50,7 @@ const getBreadcrumbs = async (slug: string[]) => {
 
 interface ContentsLayoutProps {
   children: React.ReactNode;
-  params: { slug: string[] };
+  params: Promise<{ slug: string[] }>;
 }
 
 const ContentsLayout = async ({ children, params }: ContentsLayoutProps) => {
