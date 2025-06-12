@@ -6,6 +6,7 @@ export * from './button';
 export * from './card';
 export * from './dock';
 export * from './dropdown-menu';
+export * from './image';
 export * from './iphone-15-pro';
 export * from './link';
 export * from './pointer';
