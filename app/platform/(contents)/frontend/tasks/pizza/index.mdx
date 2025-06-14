@@ -12,7 +12,7 @@ import {
   TabsList,
   TabsTrigger,
   TabsContent,
-  HashTabs
+  Tabs
 } from '@/components/ui';
 
 export const metadata = {
@@ -54,7 +54,7 @@ export const metadata = {
 
 Задание имеет несколько уровней сложности, задания спроектированы так, чтобы после выполнения одного уровня, вы смогли перейти к следующему уровню.
 
-<HashTabs defaultValue="easy" param="level">
+<Tabs defaultValue="easy" param="level">
   <TabsList>
     <TabsTrigger value="easy">Легкий</TabsTrigger>
     <TabsTrigger value="medium">Средний</TabsTrigger>
@@ -115,13 +115,13 @@ export const metadata = {
           2. Отмена оплаты с помощью запроса: <div className='flex items-center gap-2'><Link href='https://shift-intensive.ru/api/rest#tag/-pizza/put/api/pizza/orders/cancel'><ApiCard variant="rest" type="put" name="/pizza/order/cancel" className='hover:bg-accent'  /></Link><Link href='https://shift-intensive.ru/api/graphql/'><ApiCard variant="graphql" type="mutation" name="cancelOrder" className='hover:bg-accent'  /></Link></div>
 
   </TabsContent>
-</HashTabs>
+</Tabs>
 
 ## <Link href='https://shift-intensive.ru/api'>API</Link>
 
 Необходимое апи для выполнения задания
 
-<HashTabs defaultValue="rest" param="api">
+<Tabs defaultValue="rest" param="api">
 	<TabsList>
 		<TabsTrigger value="rest">REST</TabsTrigger>
 		<TabsTrigger value="graphql">⭐ GraphQL</TabsTrigger>
@@ -191,4 +191,4 @@ export const metadata = {
     	</div>
     </TabsContent>
 
-</HashTabs>
+</Tabs>

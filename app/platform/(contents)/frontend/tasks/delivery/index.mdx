@@ -12,7 +12,7 @@ import {
   TabsList,
   TabsTrigger,
   TabsContent,
-  HashTabs,
+  Tabs,
   Table,
   TableHeader,
   TableBody,
@@ -60,7 +60,7 @@ export const metadata = {
 
 Задание имеет несколько уровней сложности, задания спроектированы так, чтобы после выполнения одного уровня, вы смогли перейти к следующему уровню.
 
-<HashTabs defaultValue="easy" param="level">
+<Tabs defaultValue="easy" param="level">
   <TabsList>
     <TabsTrigger value="easy">Легкий</TabsTrigger>
     <TabsTrigger value="medium">Средний</TabsTrigger>
@@ -122,7 +122,7 @@ export const metadata = {
       2. Возможность возврата средств
 
   </TabsContent>
-</HashTabs>
+</Tabs>
 
 ## Требования к валидации
 
@@ -862,7 +862,7 @@ export const metadata = {
 
 Необходимое апи для выполнения задания
 
-<HashTabs defaultValue="rest" param="api">
+<Tabs defaultValue="rest" param="api">
 	<TabsList>
 		<TabsTrigger value="rest">REST</TabsTrigger>
 		<TabsTrigger value="graphql">⭐ GraphQL</TabsTrigger>
@@ -932,4 +932,4 @@ export const metadata = {
     	</div>
     </TabsContent>
 
-</HashTabs>
+</Tabs>
