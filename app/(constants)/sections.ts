@@ -2,55 +2,55 @@ import { AppleIcon, FrenchFries, PizzaIcon, RobotIcon, TestTubeIcon } from '@/co
 
 export const SECTIONS = [
   {
-    href: '/web',
+    href: '/platform/frontend/web',
     title: 'section.web',
     Icon: PizzaIcon,
     disabled: false
   },
   {
-    href: '/ios',
+    href: '/platform/frontend/ios',
     title: 'section.ios',
     Icon: AppleIcon,
     disabled: true
   },
   {
-    href: '/android',
+    href: '/platform/frontend/android',
     title: 'section.android',
     Icon: RobotIcon,
     disabled: false
   },
   {
-    href: '/test',
+    href: '/platform/test',
     title: 'section.test',
     Icon: TestTubeIcon,
     disabled: false
   },
   {
-    href: '/ml',
+    href: '/platform/ml',
     title: 'section.ml',
     Icon: TestTubeIcon,
     disabled: true
   },
   {
-    href: '/backend',
+    href: '/platform/backend',
     title: 'section.backend',
     Icon: FrenchFries,
     disabled: false
   },
   {
-    href: '/system-analysis',
+    href: '/platform/system-analysis',
     title: 'section.system-analysis',
     Icon: TestTubeIcon,
     disabled: true
   },
   {
-    href: '/autotests',
+    href: '/platform/autotests',
     title: 'section.autotests',
     Icon: TestTubeIcon,
     disabled: true
   },
   {
-    href: '/information-security',
+    href: '/platform/information-security',
     title: 'section.information-security',
     Icon: TestTubeIcon,
     disabled: true

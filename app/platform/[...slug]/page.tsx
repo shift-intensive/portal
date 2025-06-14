@@ -2,9 +2,9 @@ import fs from 'node:fs';
 import { join } from 'node:path';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string[];
-  };
+  }>;
 }
 
 export const generateStaticParams = async () => {
@@ -15,20 +15,17 @@ export const generateStaticParams = async () => {
     const entries = await fs.promises.readdir(dir, { withFileTypes: true });
 
     for (const entry of entries) {
-      // Skip files/folders starting with underscore or dot
       if (entry.name.startsWith('_') || entry.name.startsWith('.')) continue;
 
       const fullPath = join(dir, entry.name);
 
       if (entry.isDirectory()) {
-        // Check for index.mdx in directory
         if (fs.existsSync(join(fullPath, 'index.mdx'))) {
           paths.push([...currentPath, entry.name]);
         }
-        // Recursively scan subdirectories
+
         await scanDirectory(fullPath, [...currentPath, entry.name]);
       } else if (entry.name.endsWith('.mdx') && entry.name !== 'index.mdx') {
-        // Add MDX files (excluding index.mdx)
         paths.push([...currentPath, entry.name.replace('.mdx', '')]);
       }
     }
@@ -36,13 +33,12 @@ export const generateStaticParams = async () => {
 
   await scanDirectory(contentDir);
 
-  console.log(paths);
   return paths;
 };
 
 const Page = async ({ params }: PageProps) => {
-  console.log('params', `../${await params.slug.join('/')}/index.mdx`);
-  const Content = await import(`../(contents)/${await params.slug.join('/')}/index.mdx`);
+  const { slug } = await params;
+  const Content = await import(`../(contents)/${slug.join('/')}/index.mdx`);
 
   return <Content.default />;
 };

@@ -1,11 +1,38 @@
-import { Link, Meta } from '@/components/ui';
+import Link from 'next/link';
 
-<Meta emoji='⭐' />
+import { TaskCard } from '@/components/ui';
 
-# Задания
+export const metadata = {
+  emoji: '⭐',
+  title: 'Задания'
+};
 
-<Link href='/platform/web/tasks/delivery'>📦 Доставка товаров</Link>
+<div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
 
-<Link href='/platform/web/tasks/cinema'>🍿 Кинотеатр</Link>
+<Link href='/platform/frontend/tasks/delivery'>
+  <TaskCard
+    title='Доставка товаров'
+    description='Доставка товаров'
+    emoji='📦'
+    className='hover:bg-accent'
+  />
+</Link>
 
-<Link href='/platform/web/tasks/pizza'>🍕 Пицца</Link>
+<Link href='/platform/frontend/tasks/cinema'>
+  <TaskCard title='Кинотеатр' description='Кинотеатр' emoji='🍿' className='hover:bg-accent' />
+</Link>
+
+<Link href='/platform/frontend/tasks/pizza'>
+  <TaskCard title='Пицца' description='Пицца' emoji='🍕' className='hover:bg-accent' />
+</Link>
+
+<Link href='/platform/frontend/tasks/car'>
+  <TaskCard
+    title='Аренда машин'
+    description='Аренда машин'
+    emoji='🚗'
+    className='hover:bg-accent'
+  />
+</Link>
+
+</div>
