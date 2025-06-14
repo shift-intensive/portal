@@ -1,5 +1,5 @@
 import { Slot } from '@radix-ui/react-slot';
-import { ChevronRight, MoreHorizontal } from 'lucide-react';
+import { ChevronRightIcon, MoreHorizontalIcon } from 'lucide-react';
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';
@@ -64,7 +64,7 @@ const BreadcrumbSeparator = ({ children, className, ...props }: React.ComponentP
     role='presentation'
     {...props}
   >
-    {children ?? <ChevronRight />}
+    {children ?? <ChevronRightIcon />}
   </li>
 );
 
@@ -76,7 +76,7 @@ const BreadcrumbEllipsis = ({ className, ...props }: React.ComponentProps<'span'
     role='presentation'
     {...props}
   >
-    <MoreHorizontal className='size-4' />
+    <MoreHorizontalIcon className='size-4' />
     <span className='sr-only'>More</span>
   </span>
 );

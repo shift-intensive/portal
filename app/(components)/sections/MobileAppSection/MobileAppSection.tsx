@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { CalendarIcon, Smartphone, StarIcon, UsersIcon } from 'lucide-react';
+import { CalendarIcon, SmartphoneIcon, StarIcon, UsersIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -25,7 +25,7 @@ export const MobileAppSection = () => (
         >
           <div className='bg-card w-fit rounded-full border border-black/5 text-center text-base text-black transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800'>
             <AnimatedShinyText className='flex inline-flex items-center justify-center gap-2 px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400'>
-              <Smartphone className='size-4' /> <IntlText path='section.mobileapp.badge' />
+              <SmartphoneIcon className='size-4' /> <IntlText path='section.mobileapp.badge' />
             </AnimatedShinyText>
           </div>
           <h2 className='text-4xl font-bold'>

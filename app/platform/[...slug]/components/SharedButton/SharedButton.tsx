@@ -1,7 +1,7 @@
 'use client';
 
-import { useClipboard, useDisclosure, useMediaQuery, useShare } from '@siberiacancode/reactuse';
-import { Copy, ShareIcon } from 'lucide-react';
+import { useCopy, useMediaQuery, useShare } from '@siberiacancode/reactuse';
+import { CheckIcon, CopyIcon, ShareIcon } from 'lucide-react';
 
 import { IntlText } from '@/components/intl';
 import { Button, Input, Popover, PopoverContent, PopoverTrigger, Skeleton } from '@/components/ui';
@@ -12,15 +12,13 @@ interface SharedButtonProps {
 }
 
 export const SharedButton = ({ emoji, title }: SharedButtonProps) => {
-  const sharePopup = useDisclosure();
-  const clipboard = useClipboard();
+  const { copy, copied } = useCopy(1000);
   const share = useShare();
   const isMobile = useMediaQuery('(max-width: 768px)');
 
   const onCopy = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
-    clipboard.copy(window.location.href);
-    sharePopup.close();
+    copy(window.location.href);
   };
 
   const onShare = () => {
@@ -31,12 +29,10 @@ export const SharedButton = ({ emoji, title }: SharedButtonProps) => {
         url: window.location.href
       });
     }
-
-    sharePopup.open();
   };
 
   return (
-    <Popover onOpenChange={sharePopup.toggle} open={sharePopup.opened}>
+    <Popover>
       <PopoverTrigger asChild>
         <Button size='icon' variant='ghost' onClick={onShare}>
           <ShareIcon className='size-4' />
@@ -72,9 +68,9 @@ export const SharedButton = ({ emoji, title }: SharedButtonProps) => {
         </div>
 
         <div className='flex items-center gap-2 pt-4'>
-          {sharePopup.opened && <Input readOnly value={window.location.href} />}
-          <Button onClick={onCopy}>
-            <Copy className='mr-2 size-4' />
+          <Input readOnly value={window?.location?.href} />
+          <Button disabled={copied} onClick={onCopy}>
+            {copied ? <CheckIcon className='mr-2 size-4' /> : <CopyIcon className='mr-2 size-4' />}
             <IntlText path='button.copy' />
           </Button>
         </div>
