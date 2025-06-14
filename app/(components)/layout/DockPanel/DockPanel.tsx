@@ -57,7 +57,7 @@ export const DockPanel = () => {
                 </Link>
               </TooltipTrigger>
               <TooltipContent>
-                <p>{href}</p>
+                <p>{href.split('/').at(-1)}</p>
               </TooltipContent>
             </Tooltip>
           </DockIcon>

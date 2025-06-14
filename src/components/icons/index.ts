@@ -1,4 +1,5 @@
 export * from './AppleIcon';
+export * from './FigmaIcon';
 export * from './FrenchFries';
 export * from './GithubIcon';
 export * from './PizzaIcon';

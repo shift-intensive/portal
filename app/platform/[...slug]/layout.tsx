@@ -15,6 +15,8 @@ import {
   DropdownMenuTrigger
 } from '@/components/ui';
 
+import { SharedButton } from './components/SharedButton/SharedButton';
+
 interface BreadcrumbItemType {
   emoji: string;
   path: string;
@@ -23,7 +25,6 @@ interface BreadcrumbItemType {
 
 export async function generateMetadata({ params }: ContentsLayoutProps) {
   const { slug } = await params;
-  console.log('@@@', slug);
   const module = await import(`../(contents)/${slug.join('/')}/index.mdx`);
 
   return {
@@ -145,15 +146,13 @@ const ContentsLayout = async ({ children, params }: ContentsLayoutProps) => {
           </BreadcrumbList>
         </Breadcrumb>
 
-        {/* <div className='flex items-center gap-2'>
-          <Button size='icon' variant='ghost'>
-            <ShareIcon />
-          </Button>
-        </div> */}
+        <div className='flex items-center gap-2'>
+          <SharedButton title={lastBreadcrumb.title} emoji={lastBreadcrumb.emoji} />
+        </div>
       </div>
 
-      <div className='mb-4 ml-[-10px] text-7xl'>{lastBreadcrumb.emoji}</div>
-      <h1 className='mb-8 text-4xl font-bold tracking-tight'>{lastBreadcrumb.title}</h1>
+      <div className='mb-6 ml-[-10px] text-7xl'>{lastBreadcrumb.emoji}</div>
+      <h1 className='mb-8 text-5xl font-bold tracking-tight'>{lastBreadcrumb.title}</h1>
 
       {children}
     </div>

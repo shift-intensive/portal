@@ -1,14 +1,18 @@
-import { Link, Meta } from '@/components/ui';
+import { Meta } from '@/components/ui';
+
+import { Mention } from '@/app/platform/[...slug]/components';
 
 export const metadata = {
   emoji: '🍟',
-  title: 'Web - фронтенд разработка'
+  title: 'Frontend'
 };
 
-<Link href='/platform/frontend/web/how-to-work'>🍳 Как работать ?</Link>
+<div className='flex w-full flex-col items-start'>
+<Mention href='/platform/frontend/web/how-to-work'>🍳 Как работать ?</Mention>
 
-<Link href='/platform/frontend/web/software'>💾 Программное обеспечение</Link>
+<Mention href='/platform/frontend/web/software'>💾 Программное обеспечение</Mention>
 
-<Link href='/platform/frontend/tasks'>⭐ Задания</Link>
+<Mention href='/platform/frontend/tasks'>⭐ Задания</Mention>
 
-<Link href='/platform/frontend/web/useful-links'>👀 Полезные ссылки</Link>
+<Mention href='/platform/frontend/web/useful-links'>👀 Полезные ссылки</Mention>
+</div>
