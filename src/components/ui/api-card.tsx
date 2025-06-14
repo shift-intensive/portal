@@ -42,7 +42,14 @@ const TYPE_COLORS: Record<GraphQLMethod | RestMethod, string> = {
   subscription: 'bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-100'
 };
 
-export const ApiCard = ({ variant, type, name, className, inline, ...props }: ApiCardProps) => (
+export const ApiCard = ({
+  variant,
+  type,
+  name,
+  className,
+  inline = true,
+  ...props
+}: ApiCardProps) => (
   <Card
     className={cn(
       'flex flex-row gap-2 rounded-lg p-2',
