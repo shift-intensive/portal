@@ -15,7 +15,7 @@ import {
   DropdownMenuTrigger
 } from '@/components/ui';
 
-import { SharedButton } from './components/SharedButton/SharedButton';
+import { SharedButton } from './components';
 
 interface BreadcrumbItemType {
   emoji: string;

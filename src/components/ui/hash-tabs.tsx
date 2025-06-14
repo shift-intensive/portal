@@ -1,7 +1,7 @@
 'use client';
 
 import * as TabsPrimitive from '@radix-ui/react-tabs';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useUrlSearchParam } from '@siberiacancode/reactuse';
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';
@@ -11,21 +11,14 @@ interface HashTabsProps extends React.ComponentProps<typeof TabsPrimitive.Root> 
 }
 
 const HashTabs = ({ className, param = 'tab', ...props }: HashTabsProps) => {
-  const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const currentTab = searchParams.get(param) ?? props.defaultValue;
+  const searchParams = useUrlSearchParam(param, props.defaultValue);
 
-  const onValueChange = (value: string) => {
-    const params = new URLSearchParams(searchParams.toString());
-    params.set(param, value);
-    router.push(`${pathname}?${params.toString()}`, { scroll: false });
-  };
+  const onValueChange = (value: string) => searchParams.set(value);
 
   return (
     <TabsPrimitive.Root
       className={cn('flex flex-col gap-2', className)}
-      value={currentTab}
+      value={searchParams.value}
       data-slot='tabs'
       onValueChange={onValueChange}
       {...props}
