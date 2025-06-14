@@ -4,7 +4,7 @@ import { useCopy, useMediaQuery, useShare } from '@siberiacancode/reactuse';
 import { CheckIcon, CopyIcon, ShareIcon } from 'lucide-react';
 
 import { IntlText } from '@/components/intl';
-import { Button, Input, Popover, PopoverContent, PopoverTrigger, Skeleton } from '@/components/ui';
+import { Button, Popover, PopoverContent, PopoverTrigger, Skeleton } from '@/components/ui';
 
 interface SharedButtonProps {
   emoji: string;
@@ -68,8 +68,7 @@ export const SharedButton = ({ emoji, title }: SharedButtonProps) => {
         </div>
 
         <div className='flex items-center gap-2 pt-4'>
-          <Input readOnly value={window?.location?.href} />
-          <Button disabled={copied} onClick={onCopy}>
+          <Button className='w-full' disabled={copied} onClick={onCopy}>
             {copied ? <CheckIcon className='mr-2 size-4' /> : <CopyIcon className='mr-2 size-4' />}
             <IntlText path='button.copy' />
           </Button>
