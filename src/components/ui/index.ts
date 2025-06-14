@@ -17,6 +17,7 @@ export * from './popover';
 export * from './scroll-based-velocity';
 export * from './separator';
 export * from './skeleton';
+export * from './table';
 export * from './tabs';
 export * from './task-card';
 export * from './tooltip';
