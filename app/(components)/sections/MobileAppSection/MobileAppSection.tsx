@@ -48,7 +48,7 @@ export const MobileAppSection = () => (
           initial={{ y: 20, opacity: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className='flex items-center gap-2'>
+          <div className='flex flex-wrap items-center gap-2'>
             <div className='rounded-lg bg-green-100 p-2'>
               <CalendarIcon className='size-6 text-green-600' />
             </div>
@@ -61,7 +61,7 @@ export const MobileAppSection = () => (
               </div>
             </div>
           </div>
-          <div className='flex items-center gap-2'>
+          <div className='flex flex-wrap items-center gap-2'>
             <div className='rounded-lg bg-blue-100 p-2'>
               <StarIcon className='size-6 text-blue-600' />
             </div>
@@ -74,7 +74,7 @@ export const MobileAppSection = () => (
               </div>
             </div>
           </div>
-          <div className='flex items-center gap-2'>
+          <div className='flex flex-wrap items-center gap-2'>
             <div className='rounded-lg bg-purple-100 p-2'>
               <UsersIcon className='size-6 text-purple-600' />
             </div>

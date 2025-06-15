@@ -56,7 +56,7 @@ const RootLayout = async ({ children }: Readonly<RootLayoutProps>) => {
 
         <Provider intl={{ locale, messages }}>
           <Header />
-          <main className='flex-1'>{children}</main>
+          {children}
           <Footer />
         </Provider>
       </body>
